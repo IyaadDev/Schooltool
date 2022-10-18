@@ -1,6 +1,9 @@
-# Schooltool
-School Tool is an application designed for you.
-Designed in Dark Mode.
-Easy to use and more!
+# School Tool
+School Tool is an application designed for students in class. They can access their timetable, School Resources and more (Custom features per class)
 
-Support only for Cambridge International School 8-1
+## Handy features
+- Designed in Dark Mode.
+- Easy to use and more!
+
+## Register your classroom in the launcher
+https://launcher.schooltool.cf
