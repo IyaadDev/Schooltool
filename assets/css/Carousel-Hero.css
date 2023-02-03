@@ -9,15 +9,15 @@ div.jumbotron.carousel-hero {
 }
 
 div.jumbotron.hero-nature {
-  background-image: url('../../assets/img/hero-background-nature.jpg');
+  background-image: url('../../assets/img/hero-background-nature.jpg?h=3551ddb9241954562f5b5094c6693687');
 }
 
 div.jumbotron.hero-photography {
-  background-image: url('../../assets/img/hero-background-photography.jpg');
+  background-image: url('../../assets/img/hero-background-photography.jpg?h=548665975ba97801504637807428ef43');
 }
 
 div.jumbotron.hero-technology {
-  background-image: url('../../assets/img/hero-background-technology.jpg');
+  background-image: url('../../assets/img/hero-background-technology.jpg?h=6cc40f253bd89ef808b88ff9d4fde97b');
 }
 
 h1.hero-title, h2.hero-title, h3.hero-title {
