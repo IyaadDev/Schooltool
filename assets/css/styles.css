@@ -1,29 +1,29 @@
 .box {
-  color: white;
+  color: black;
   background-color: inherit;
-  border-color: white;
+  border-color: black;
 }
 
 .box:hover {
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
   animation: moved ease-in-out 0.5s backwards;
 }
 
 @keyframes moved {
   0% {
-    color: white;
+    color: black;
     background-color: inherit;
   }
   100% {
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: black;
     border-color: white;
   }
 }
 
 .day-message {
-  margin-top: 6.5%;
+  margin-top: 0px;
   font-size: 50px;
   animation: fadeIn ease-in-out 3.5s backwards;
 }
@@ -63,5 +63,13 @@ a:hover {
     background-color: transparent;
     border-color: white;
   }
+}
+
+body {
+  text-decoration: none!important;
+}
+
+a {
+  text-decoration: none!important;
 }
 
