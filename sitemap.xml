@@ -4,7 +4,22 @@
         <loc>https://schooltool.io/standard/app/config.html</loc>
     </url>
     <url>
-        <loc>https://schooltool.io/standard/app/</loc>
+        <loc>https://schooltool.io/standard/app/config-class.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/config-cookie.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/config-primary.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/config-secondary.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/config-section.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/config-upper-secondary.html</loc>
     </url>
     <url>
         <loc>https://schooltool.io/standard/app/index-1.html</loc>

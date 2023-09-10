@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>School Tool - To skyrocket 🚀 student productivity</title>
+    <title>School Tool - Home</title>
     <link rel="canonical" href="https://schooltool.io/standard/app/">
     <meta property="og:url" content="https://schooltool.io/standard/app/">
     <meta name="twitter:description" content="Student productivity tool">
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../../assets/css/aib.compiled.css?h=81d70c0f8d48d35d04683ec529545b32">
     <link rel="stylesheet" href="../../assets/css/gTexts.css?h=49dd4fc6c5813697f572a89c62202cbe">
     <link rel="stylesheet" href="../../assets/css/Navbar-Centered-Brand-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
-    <link rel="stylesheet" href="../../assets/css/styles.css?h=c5b55f8abde82b415c49f5b9ec2c8ff0">
+    <link rel="stylesheet" href="../../assets/css/styles.css?h=db1924634b2a05e58a6b1142143d0ad5">
 </head>
 
 <body style="background-image: url(&quot;../../assets/img/back/hubble2.webp?h=7ed5b1ad36b0d7254150f5c200348b2e&quot;);background-size: cover;background-repeat: no-repeat;background-attachment: fixed;width: 100%;margin: 0;padding: 0;height: 100vw;">
@@ -62,9 +62,9 @@
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
                                     <h4 class="text-start" style="font-weight: bold;color: var(--bs-link-hover-color);">Now</h4>
-                                    <h2 class="text-start lesson" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">English</h2>
+                                    <h2 class="text-start lesson" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">Loading...</h2>
                                     <h4 class="text-start" style="font-weight: bold;color: var(--bs-form-invalid-border-color);margin-top: 1rem;">Up next</h4>
-                                    <h2 class="text-start nextlesson" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">English</h2><script>
+                                    <h2 class="text-start nextPeriod" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">Loading...</h2><script>
     // Fetch the JSON file
     fetch('assets/js/timetable.json')
         .then(response => {
@@ -90,11 +90,17 @@
 
             // Find the corresponding period in the timetable
             let currentPeriod = null;
+            let nextPeriod = null;
             for (let period in data.timings[currentDay]) {
                 const start = data.timings[currentDay][period].start;
                 const end = data.timings[currentDay][period].end;
                 if (currentTime >= start && currentTime < end) {
                     currentPeriod = period;
+                    // Find the next period
+                    const nextPeriodIndex = Number(period) + 1;
+                    if (data.timings[currentDay][nextPeriodIndex]) {
+                        nextPeriod = nextPeriodIndex.toString();
+                    }
                     break; // We found the current period, so exit the loop
                 }
             }
@@ -105,6 +111,21 @@
                 console.log(`Current Period: Period ${currentPeriod}`);
                 const currentLesson = data.days[currentDay][currentPeriod - 1][currentPeriod];
                 console.log(`Current Lesson: ${currentLesson}`);
+
+                // Display the current period in the h2 element with class .lesson
+                const lessonElement = document.querySelector('.lesson');
+                if (lessonElement) {
+                    lessonElement.textContent = `${currentLesson}`;
+                }
+
+                // Display the next period in the h2 element with class .nextPeriod
+                if (nextPeriod !== null) {
+                    const nextLesson = data.days[currentDay][nextPeriod - 1][nextPeriod];
+                    const nextPeriodElement = document.querySelector('.nextPeriod');
+                    if (nextPeriodElement) {
+                        nextPeriodElement.textContent = `${nextLesson}`;
+                    }
+                }
             } else {
                 console.log('No class is currently in session.');
             }
@@ -186,7 +207,39 @@
 </div>
                             </div>
                         </div>
-                        <div class="col-md-4"></div>
+                        <div class="col-md-8 col-lg-5">
+                            <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
+                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
+                                    <h3 class="quote">Heading</h3>
+                                    <div><span style="padding: 0.2rem;border-radius: 5px;background: rgba(159,144,255,0.36);font-size: large;">Text</span></div> <script>
+        const params = new URLSearchParams({
+            maxLength: 150,
+            minLength: 100
+        });
+
+        const url = `https://api.quotable.io/random?${params}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const quoteElement = document.querySelector('.quote');
+                const authorElement = document.querySelector('.quoteAuthor');
+                
+                if (quoteElement && authorElement) {
+                    quoteElement.textContent = data.content;
+                    authorElement.textContent = data.author;
+                } else {
+                    console.error("Quote or author element not found.");
+                }
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);
+            });
+    </script>
+                                    <p class="quoteAuthor">Paragraph</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div><!-- End: 1 Row 3 Columns -->
             </section><!-- End: Userpanel -->
