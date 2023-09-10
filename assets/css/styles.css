@@ -1,75 +1,11 @@
-.box {
-  color: black;
-  background-color: inherit;
-  border-color: black;
+.lesson {
 }
 
-.box:hover {
-  color: white;
-  background-color: black;
-  animation: moved ease-in-out 0.5s backwards;
+.aib {
+  border-radius: 10rem;
+  border-style: none;
 }
 
-@keyframes moved {
-  0% {
-    color: black;
-    background-color: inherit;
-  }
-  100% {
-    color: white;
-    background-color: black;
-    border-color: white;
-  }
-}
-
-.day-message {
-  margin-top: 0px;
-  font-size: 50px;
-  animation: fadeIn ease-in-out 3.5s backwards;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-.clean {
-  text-decoration: none;
-}
-
-.clean:hover {
-  text-decoration: none;
-}
-
-.box:not(:hover) {
-  animation: unmoved ease-in-out 0.5s backwards;
-}
-
-@keyframes unmoved {
-  0% {
-    color: black;
-    background-color: inherit;
-  }
-  100% {
-    color: white;
-    background-color: transparent;
-    border-color: white;
-  }
-}
-
-body {
-  text-decoration: none!important;
-}
-
-a {
-  text-decoration: none!important;
+#hoverDiv {
 }
 
