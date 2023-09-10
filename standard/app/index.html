@@ -210,11 +210,13 @@
                         <div class="col-md-8 col-lg-5">
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
-                                    <h3 class="quote">Heading</h3>
-                                    <div><span style="padding: 0.2rem;border-radius: 5px;background: rgba(159,144,255,0.36);font-size: large;">Text</span></div> <script>
+                                    <h4 class="quote" style="padding: 0.5rem;">Heading</h4>
+                                    <div></div><script>
+        const authors = ["steve-jobs", "albert-einstein", "mahatma-gandhi", "william-shakespeare"];
+        const randomAuthor = authors[Math.floor(Math.random() * authors.length)];
+
         const params = new URLSearchParams({
-            maxLength: 150,
-            minLength: 100
+            author: randomAuthor,
         });
 
         const url = `https://api.quotable.io/random?${params}`;
