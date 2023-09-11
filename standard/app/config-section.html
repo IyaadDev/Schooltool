@@ -79,7 +79,7 @@
     // Function to load the classes JSON data
     function loadClassesData(callback) {
         // Replace 'path-to-your-json-file' with the actual path to your JSON file
-        fetch('assets/js/classes.json')
+        fetch('https://schooltool.io/assets/js/classes.json')
             .then(response => response.json())
             .then(data => callback(data))
             .catch(error => console.error('Error loading classes data:', error));

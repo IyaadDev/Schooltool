@@ -28,7 +28,39 @@
 </head>
 
 <body>
-    <p>You are being authenticated, please go back to the previous page if over 3 seconds passes.</p><div>Custom Code</div>
+    <p>You are being authenticated, please go back to the previous page if over 3 seconds passes.</p><script>
+    // Check if "class" cookie exists
+if (document.cookie.split(';').some((item) => item.trim().startsWith('class='))) {
+  const classCookie = document.cookie
+    .split('; ')
+    .find((row) => row.startsWith('class='))
+    .split('=')[1];
+
+  // Check if "classAccess" cookie exists
+  if (document.cookie.split(';').some((item) => item.trim().startsWith('classAccess='))) {
+    const classAccessCookie = document.cookie
+      .split('; ')
+      .find((row) => row.startsWith('classAccess='))
+      .split('=')[1];
+
+    console.log('Cookie with name "class" exists. Value:', classCookie);
+    console.log('Cookie with name "classAccess" exists. Value:', classAccessCookie);
+
+    // Check the value of "classAccess" cookie
+    if (classAccessCookie === 'false') {
+      // Redirect to generate.html with the "cl" query parameter
+      window.location.href = `generate.html?cl=${classCookie}`;
+    }
+  } else {
+    console.log('Cookie with name "classAccess" does not exist.');
+    alert('Incorrectly configured controller');
+  }
+} else {
+  console.log('Cookie with name "class" does not exist.');
+  alert('Incorrectly configured controller');
+}
+
+</script>
     <script src="../../assets/bootstrap/js/bootstrap.min.js?h=a52d057774a957ffc5c4e3aabf79520a"></script>
     <script src="../../assets/js/user.js?h=d41d8cd98f00b204e9800998ecf8427e"></script>
 </body>

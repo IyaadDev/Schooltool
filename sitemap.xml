@@ -10,9 +10,6 @@
         <loc>https://schooltool.io/standard/app/config-class.html</loc>
     </url>
     <url>
-        <loc>https://schooltool.io/standard/app/config-cookie.html</loc>
-    </url>
-    <url>
         <loc>https://schooltool.io/standard/app/config-primary.html</loc>
     </url>
     <url>
@@ -23,6 +20,9 @@
     </url>
     <url>
         <loc>https://schooltool.io/standard/app/config-upper-secondary.html</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/standard/app/generate.html</loc>
     </url>
     <url>
         <loc>https://schooltool.io/standard/app/timetable.html</loc>
