@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://schooltool.io/standard/app/auth.html</loc>
-    </url>
-    <url>
         <loc>https://schooltool.io/standard/app/config.html</loc>
-    </url>
-    <url>
-        <loc>https://schooltool.io/standard/app/config-class.html</loc>
-    </url>
-    <url>
-        <loc>https://schooltool.io/standard/app/config-primary.html</loc>
-    </url>
-    <url>
-        <loc>https://schooltool.io/standard/app/config-secondary.html</loc>
-    </url>
-    <url>
-        <loc>https://schooltool.io/standard/app/config-section.html</loc>
-    </url>
-    <url>
-        <loc>https://schooltool.io/standard/app/config-upper-secondary.html</loc>
     </url>
     <url>
         <loc>https://schooltool.io/standard/app/generate.html</loc>

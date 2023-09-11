@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>School Tool - To skyrocket 🚀 student productivity</title>
+    <title>Time Table</title>
     <link rel="canonical" href="https://schooltool.io/standard/app/timetable.html">
     <meta property="og:url" content="https://schooltool.io/standard/app/timetable.html">
     <meta name="twitter:description" content="Student productivity tool">
@@ -41,8 +41,8 @@
             <section>
                 <!-- Start: 1 Row 3 Columns -->
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 col-lg-6">
+                    <div class="row text-center d-sm-flex d-lg-flex justify-content-sm-center justify-content-lg-center align-items-lg-center">
+                        <div class="col-md-5 col-lg-10">
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><img src="../../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc" style="width: 5rem;height: auto;">
                                     <h2>Welcome to the New School Tool!</h2>
@@ -50,92 +50,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-lg-5">
-                            <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;max-height: 100%;">
-                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><a class="weatherwidget-io" class="forceend" href="https://forecast7.com/en/25d2055d27/dubai/" data-label_1="DUBAI" data-font="Roboto" data-icons="Climacons Animated" data-theme="pure" data-basecolor="transparent" >Dubai</a>
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-</script></div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-3">
-                            <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
-                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
-                                    <h4 class="text-start" style="font-weight: bold;color: var(--bs-link-hover-color);">Now</h4>
-                                    <h2 class="text-start lesson" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">English</h2>
-                                    <h4 class="text-start" style="font-weight: bold;color: var(--bs-form-invalid-border-color);margin-top: 1rem;">Up next</h4>
-                                    <h2 class="text-start nextlesson" style="border-left: 5.4px solid var(--bs-link-color);border-radius: 3px;padding-left: 0.5rem;">English</h2>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-lg-3">
-                            <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
-                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><h2 class="text-start memeheader" style="font-weight: bold;color: var(--bs-link-hover-color);"></h2><script>
-        // Array of random text options
-        const randomTextOptions = [
-            "Funny meme text",
-            "LOL!",
-            "Hilarious",
-            "ROFL",
-            "This is a meme",
-        ];
-
-        // Function to generate random text
-        function getRandomText() {
-            const randomIndex = Math.floor(Math.random() * randomTextOptions.length);
-            return randomTextOptions[randomIndex];
+                        <div class="col-md-9 col-lg-12"><script>
+    // Function to get the value of a cookie by its name
+    function getCookie(cookieName) {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(cookieName + '=')) {
+                return cookie.substring(cookieName.length + 1);
+            }
         }
+        return null;
+    }
 
-        // Get the h2 element with class "memeHeader"
-        const memeHeader = document.querySelector(".memeHeader");
+    // Get the "class" cookie
+    const classCookie = getCookie('class');
 
-        // Set the inner text of the h2 element to a random text
-        memeHeader.textContent = getRandomText();
-    </script><div id="image-container">
-        <img id="random-image" src="" alt="Iyaad">
-    </div>
+    if (classCookie) {
+        // Split the cookie contents by "-"
+        const [firstPart, secondPart] = classCookie.split('-');
+        
+        // Log the first and second parts to the console
+        console.log('First Part of "class" cookie:', firstPart);
+        console.log('Second Part of "class" cookie:', secondPart);
 
-    <script>
-        // Array of image URLs
-        const imageList = [
-            'assets/img/memes/1.webp',
-            'assets/img/memes/2.webp',
-            'assets/img/memes/3.webp',
-            'assets/img/memes/4.webp',
-            'assets/img/memes/5.webp',
-            'assets/img/memes/6.webp',
-            'assets/img/memes/7.webp',
-            'assets/img/memes/8.webp',
-            'assets/img/memes/9.webp'
-            // Add more image URLs here
-        ];
+        // Construct the URL for fetching the JSON file and image
+        const jsonURL = `https://cloud.acroford.com/sct/${firstPart}/${secondPart}`;
+        const imageURL = `${jsonURL}/src/timetable.png`;
 
-        // Function to pick a random image
-        function getRandomImage() {
-            const randomIndex = Math.floor(Math.random() * imageList.length);
-            return imageList[randomIndex];
-        }
+        // Create an img element and set its src attribute
+        const imgElement = document.createElement('img');
+        imgElement.src = imageURL;
 
-        // Function to display a random image
-        function displayRandomImage() {
-            const randomImage = getRandomImage();
-            const imageContainer = document.getElementById('image-container');
-            const randomImageElement = document.getElementById('random-image');
-
-            randomImageElement.src = randomImage;
-        }
-
-        // Initial display of a random image
-        displayRandomImage();
-
-        // You can trigger this function whenever needed (e.g., on button click)
-        // Example: <button onclick="displayRandomImage()">Show Random Image</button>
-    </script>
+        // Append the img element to the document body or any other desired location
+        document.body.appendChild(imgElement);
+    } else {
+        console.log('The "class" cookie is not set.');
+    }
+</script>
 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4"></div>
                     </div>
                 </div><!-- End: 1 Row 3 Columns -->
             </section><!-- End: Userpanel -->
