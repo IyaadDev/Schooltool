@@ -56,19 +56,14 @@
       "1": { "start": "0740", "end": "0750" },
       "2": { "start": "0750", "end": "0840" },
       "3": { "start": "0840", "end": "0930" },
-      "4": { "start": "0930", "end": "1010" },
-      "5": { "start": "1010", "end": "1030" },
-      "6": { "start": "1030", "end": "1120" },
-      "7": { "start": "1120", "end": "1210" },
-      "8": { "start": "1210", "end": "1300" },
-      "9": { "start": "1300", "end": "1320" },
-      "10": { "start": "1320", "end": "1410" },
-      "11": { "start": "1410", "end": "1500" }
+      "4": { "start": "0930", "end": "0950" },
+      "5": { "start": "0950", "end": "1040" },
+      "6": { "start": "1040", "end": "1130" }
     }
   },
   "days": {
     "monday": [
-      { "1": "gaming" },
+      { "1": "Registration" },
       { "2": "English" },
       { "3": "Mathematics" },
       { "4": "CFL" },
@@ -82,55 +77,50 @@
     ],
     "tuesday": [
       { "1": "Registration" },
-      { "2": "English" },
-      { "3": "Mathematics" },
+      { "2": "Mathematics" },
+      { "3": "Humanities" },
       { "4": "CFL" },
       { "5": "Break" },
-      { "6": "Arabic" },
-      { "7": "PE" },
-      { "8": "Science" },
+      { "6": "PSHE / Islamic" },
+      { "7": "English" },
+      { "8": "Arabic" },
       { "9": "Break" },
-      { "10": "Options" },
-      { "11": "Art" }
+      { "10": "Mathematics" },
+      { "11": "DEAR" }
     ],
     "wednesday": [
       { "1": "Registration" },
-      { "2": "English" },
-      { "3": "Mathematics" },
+      { "2": "Mathematics" },
+      { "3": "Options" },
       { "4": "CFL" },
       { "5": "Break" },
-      { "6": "Arabic" },
-      { "7": "PE" },
-      { "8": "Science" },
+      { "6": "Science" },
+      { "7": "MSCS" },
+      { "8": "Drama" },
       { "9": "Break" },
-      { "10": "Options" },
-      { "11": "Art" }
+      { "10": "English" },
+      { "11": "ECA" }
     ],
     "thursday": [
       { "1": "Registration" },
       { "2": "English" },
-      { "3": "Mathematics" },
+      { "3": "Arabic" },
       { "4": "CFL" },
       { "5": "Break" },
-      { "6": "Arabic" },
+      { "6": "Science" },
       { "7": "PE" },
-      { "8": "Science" },
+      { "8": "Mathematics" },
       { "9": "Break" },
-      { "10": "Options" },
-      { "11": "Art" }
+      { "10": "English" },
+      { "11": "Options" }
     ],
     "friday": [
       { "1": "Registration" },
-      { "2": "English" },
-      { "3": "Mathematics" },
-      { "4": "CFL" },
-      { "5": "Break" },
-      { "6": "Arabic" },
-      { "7": "PE" },
-      { "8": "Science" },
-      { "9": "Break" },
-      { "10": "Options" },
-      { "11": "Art" }
+      { "2": "MSCS" },
+      { "3": "PSHE / Islamic" },
+      { "4": "Break" },
+      { "5": "Options" },
+      { "6": "Science" }
     ]
   }
 }
