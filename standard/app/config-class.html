@@ -76,25 +76,7 @@
                 </div>
             </section><!-- End: Userpanel -->
         </section><!-- End: Header -->
-    </header><!-- Start: CookieCheck --><script>
-    // Check if the "class" cookie exists
-function getCookied(name) {
-  const cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith(name + '=')) {
-      return true; // The cookie exists
-    }
-  }
-  return false; // The cookie doesn't exist
-}
-
-// Redirect if the "class" cookie doesn't exist
-if (!getCookied('class')) {
-  window.location.href = 'https://schooltool.io/standard/app/config.html';
-}
-
-</script><!-- End: CookieCheck -->
+    </header>
     <script src="../../assets/bootstrap/js/bootstrap.min.js?h=a52d057774a957ffc5c4e3aabf79520a"></script>
     <script src="../../assets/js/user.js?h=d41d8cd98f00b204e9800998ecf8427e"></script>
 </body>
