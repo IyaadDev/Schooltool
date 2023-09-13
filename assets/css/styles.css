@@ -77,3 +77,17 @@
   border-radius: 50%;
 }
 
+body {
+  /*background-image: url("../../assets/img/back/orbs.webp?h=73b680a0c1e1caff41ccfc1543601077")!important;*/
+  background-size: cover!important;
+  background-repeat: no-repeat!important;
+  background-attachment: fixed!important;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.white {
+  color: white!important;
+}
+
