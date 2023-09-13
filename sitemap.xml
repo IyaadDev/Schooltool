@@ -4,6 +4,12 @@
         <loc>https://schooltool.io/app/config.html</loc>
     </url>
     <url>
+        <loc>https://schooltool.io/app/createClass.html</loc>
+    </url>
+    <url>
         <loc>https://schooltool.io/</loc>
+    </url>
+    <url>
+        <loc>https://schooltool.io/timetable.html</loc>
     </url>
 </urlset>
