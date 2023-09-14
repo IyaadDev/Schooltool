@@ -15,10 +15,10 @@
     <link rel="icon" type="image/webp" sizes="3995x3995" href="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=896192cc65e20f1fcc6d792b5b9a4626">
     <link rel="stylesheet" href="../assets/css/aib.compiled.css?h=81d70c0f8d48d35d04683ec529545b32">
-    <link rel="stylesheet" href="../assets/css/gTexts.css?h=68701b8f705c089cd29413bda6c65920">
+    <link rel="stylesheet" href="../assets/css/gTexts.css?h=5b518b5cf96b3fa864cbd8769a76d515">
     <link rel="stylesheet" href="../assets/css/Hero-Clean-Reverse-images.css?h=4f3cfa46e40e236365345fc77963f4b8">
     <link rel="stylesheet" href="../assets/css/Login-with-overlay-image.css?h=22499ec702aa86f2b223837233dc4445">
-    <link rel="stylesheet" href="../assets/css/styles.css?h=abddce6357aeeca7276d204575a44d8e">
+    <link rel="stylesheet" href="../assets/css/styles.css?h=e3e0e7c0beda38bd2a9644f449be6ac8">
 </head>
 
 <body style="width: 100%;margin: 0;padding: 0;height: 100vw;">
@@ -35,7 +35,7 @@
             <section>
                 <!-- Start: 1 Row 3 Columns -->
                 <div class="container">
-                    <div class="row text-center d-sm-flex d-lg-flex justify-content-sm-center justify-content-lg-center">
+                    <div class="row text-center">
                         <div class="col-md-10 col-lg-6">
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><img src="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc" style="width: 5rem;height: auto;">
@@ -211,6 +211,41 @@
             });
     </script>
                                     <p class="quoteAuthor">Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-lg-2">
+                            <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
+                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
+                                    <h4 class="quote" style="padding: 0.5rem;">Study Mode</h4>
+                                    <div></div><script>
+        const authors = ["steve-jobs", "albert-einstein", "mahatma-gandhi", "william-shakespeare"];
+        const randomAuthor = authors[Math.floor(Math.random() * authors.length)];
+
+        const params = new URLSearchParams({
+            author: randomAuthor,
+        });
+
+        const url = `https://api.quotable.io/random?${params}`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const quoteElement = document.querySelector('.quote');
+                const authorElement = document.querySelector('.quoteAuthor');
+                
+                if (quoteElement && authorElement) {
+                    quoteElement.textContent = data.content;
+                    authorElement.textContent = data.author;
+                } else {
+                    console.error("Quote or author element not found.");
+                }
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);
+            });
+    </script>
+                                    <p class="quoteAuthor">Study Sessions</p><button class="btn btn-primary" type="button">New Session</button>
                                 </div>
                             </div>
                         </div>

@@ -22,6 +22,12 @@
   background: linear-gradient(-132deg, #FF0000, #0000FF)!important;
 }
 
+.gtext-lightning {
+  -webkit-background-clip: text!important;
+  -webkit-text-fill-color: transparent!important;
+  background: linear-gradient(130deg, #ff5c00 0%, #ffb800 100%);
+}
+
 .gtext-blue {
   background: linear-gradient(90deg, #64b0c8 0%, #2192b5 100%);
   -webkit-background-clip: text;
