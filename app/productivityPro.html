@@ -36,44 +36,47 @@
             <section>
                 <!-- Start: 1 Row 3 Columns -->
                 <div class="container">
-                    <div class="row text-center d-sm-flex d-lg-flex justify-content-sm-center justify-content-lg-center align-items-lg-center">
-                        <div class="col-md-5 col-lg-10">
+                    <div class="row text-center d-sm-flex justify-content-sm-center">
+                        <div class="col-md-4 col-lg-4">
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
-                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><img src="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc" style="width: 5rem;height: auto;">
-                                    <h2>TimeTable</h2>
-                                    <p>Check your full schedule out! 😎</p> <h1 class="pTimer">45:00</h1>
+                                <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
+                                    <h4>&nbsp;Time left</h4> <h1 class="pTimer" style="font-size: 3rem!important;">45:00</h1>
     <a class="btn btn-primary" role="button" href="https://schooltool.io/app/break.html" id="breakButton" style="display:none;">Activate Break <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path></svg></a>
 
     <script>
         // Function to start the timer
-        function startTimer(duration, display) {
-            let timer = duration, minutes, seconds;
+function startTimer(duration, display) {
+    let timer = duration, minutes, seconds;
+    const breakButton = document.getElementById("breakButton");
+    const titleElement = document.querySelector("title"); // Get the title element
 
-            const breakButton = document.getElementById("breakButton");
+    const timerInterval = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-            const timerInterval = setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+        display.textContent = minutes + ":" + seconds;
 
-                display.textContent = minutes + ":" + seconds;
+        // Update the title element with the timer value
+        titleElement.textContent = `${minutes}:${seconds} Left - Your Page Title`;
 
-                if (--timer < 0) {
-                    clearInterval(timerInterval); // Stop the timer
-                    display.style.display = "none"; // Hide the timer display
+        if (--timer < 0) {
+            clearInterval(timerInterval); // Stop the timer
+            display.style.display = "none"; // Hide the timer display
 
-                    // Check and update cookies
-                    checkAndUpdateCookie("sessionCount");
-                    checkAndUpdateCookie("lastSessionDay");
-                    checkAndUpdateCookie("lastSessionDate");
-                    checkAndUpdateCookie("socialCredit");
+            // Check and update cookies
+            checkAndUpdateCookie("sessionCount");
+            checkAndUpdateCookie("lastSessionDay");
+            checkAndUpdateCookie("lastSessionDate");
+            checkAndUpdateCookie("socialCredit");
 
-                    breakButton.style.display = "block"; // Show the break button
-                }
-            }, 1000);
+            breakButton.style.display = "block"; // Show the break button
         }
+    }, 1000);
+}
+
 
         // Function to get a cookie by name
         function getCookie(name) {
@@ -124,53 +127,31 @@
 
         window.onload = function () {
             const display = document.querySelector('.pTimer');
-            const timerDuration = 15; // 0.25 minute in seconds
+            const timerDuration = 2700 // 0.25 minute in seconds
             startTimer(timerDuration, display);
         };
     </script>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-9 col-lg-12" style="width: 100%;height: auto;border-radius: 5px;"><script>
-    // Function to get the value of a cookie by its name
-    function getCookie(cookieName) {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim();
-            if (cookie.startsWith(cookieName + '=')) {
-                return cookie.substring(cookieName.length + 1);
-            }
-        }
-        return null;
-    }
-
-    // Get the "class" cookie
-    const classCookie = getCookie('class');
-
-    if (classCookie) {
-        // Split the cookie contents by "-"
-        const [firstPart, secondPart] = classCookie.split('-');
-        
-        // Log the first and second parts to the console
-        console.log('First Part of "class" cookie:', firstPart);
-        console.log('Second Part of "class" cookie:', secondPart);
-
-        // Construct the URL for fetching the JSON file and image
-        const jsonURL = `https://cloud.acroford.com/sct/${firstPart}/${secondPart}`;
-        const imageURL = `${jsonURL}/timetable.webp`;
-
-        // Create an img element and set its src attribute
-        const imgElement = document.createElement('img');
-        imgElement.src = imageURL;
-        imgElement.id = "classTimetable"
-
-        // Append the img element to the document body or any other desired location
-        document.body.appendChild(imgElement);
-    } else {
-        console.log('The "class" cookie is not set.');
-    }
-</script>
-</div>
+                        <div class="col-sm-10 col-md-7 col-lg-7 text-center">
+                            <div style="background: rgba(255,255,255,0.6);border-radius: 6px!important;">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item" role="presentation"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-2"><img style="width: auto;height: 8rem;margin-right: 0.25rem;" src="../assets/img/lightining.png?h=fe9fed893baba524ede22efa9ec49035">GPT-4</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-3">Tab 3</a></li>
+                                    <li class="nav-item" role="presentation"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1"><img src="../assets/img/chatgpt.png?h=ab87208674767515ab6bbd5ffeb6cb3e" style="width: auto;height: 1rem;margin-right: 0.25rem;">ChatGPT</a></li>
+                                </ul>
+                                <div class="tab-content" style="height: 20rem;">
+                                    <div class="tab-pane" role="tabpanel" id="tab-1" style="height: 20rem;"><iframe width="100%" height="100%" src="https://chat.openai.com"></div>
+                                    <div class="tab-pane active" role="tabpanel" id="tab-2">
+                                        <p>Content for tab 2.</p>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="tab-3">
+                                        <p>Content for tab 3.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div><!-- End: 1 Row 3 Columns -->
             </section><!-- End: Userpanel -->
