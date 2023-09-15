@@ -2,8 +2,9 @@
 }
 
 .aib {
-  border-radius: 10rem;
+  border-radius: 8px;
   border-style: none;
+  background: #073042;
 }
 
 #hoverDiv {
