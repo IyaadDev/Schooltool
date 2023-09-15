@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Time Table</title>
-    <link rel="canonical" href="https://schooltool.io/app/timetable.html">
-    <meta property="og:url" content="https://schooltool.io/app/timetable.html">
+    <link rel="canonical" href="https://schooltool.io/app/productivityPro.html">
+    <meta property="og:url" content="https://schooltool.io/app/productivityPro.html">
     <meta name="description" content="School Tool is an innovative 💡 new platform that puts the productivity 💼 back into education . Check us out today ✨!">
     <link rel="icon" type="image/webp" sizes="3995x3995" href="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc">
     <link rel="icon" type="image/webp" sizes="3995x3995" href="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc">
@@ -41,7 +41,93 @@
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;"><img src="../assets/img/logo.webp?h=0722d3247654ad6b5121ce1ebd28d5fc" style="width: 5rem;height: auto;">
                                     <h2>TimeTable</h2>
-                                    <p>Check your full schedule out! 😎</p>
+                                    <p>Check your full schedule out! 😎</p> <h1 class="pTimer">45:00</h1>
+    <a class="btn btn-primary" role="button" href="https://schooltool.io/app/break.html" id="breakButton" style="display:none;">Activate Break <svg class="bi bi-arrow-right-short" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path></svg></a>
+
+    <script>
+        // Function to start the timer
+        function startTimer(duration, display) {
+            let timer = duration, minutes, seconds;
+
+            const breakButton = document.getElementById("breakButton");
+
+            const timerInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(timerInterval); // Stop the timer
+                    display.style.display = "none"; // Hide the timer display
+
+                    // Check and update cookies
+                    checkAndUpdateCookie("sessionCount");
+                    checkAndUpdateCookie("lastSessionDay");
+                    checkAndUpdateCookie("lastSessionDate");
+                    checkAndUpdateCookie("socialCredit");
+
+                    breakButton.style.display = "block"; // Show the break button
+                }
+            }, 1000);
+        }
+
+        // Function to get a cookie by name
+        function getCookie(name) {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.startsWith(name + "=")) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        // Function to create or update a cookie
+        function checkAndUpdateCookie(cookieName) {
+            let cookieValue = getCookie(cookieName);
+
+            if (cookieName === "sessionCount") {
+                if (!cookieValue) {
+                    cookieValue = "1";
+                } else {
+                    cookieValue = (parseInt(cookieValue) + 1).toString();
+                }
+            } else if (cookieName === "lastSessionDay") {
+                if (!cookieValue) {
+                    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                    const today = new Date();
+                    cookieValue = daysOfWeek[today.getDay()].toLowerCase();
+                }
+            } else if (cookieName === "lastSessionDate") {
+                if (!cookieValue) {
+                    const today = new Date();
+                    const day = today.getDate();
+                    const month = today.getMonth() + 1;
+                    const year = today.getFullYear();
+                    cookieValue = day + "/" + month + "/" + year;
+                }
+            } else if (cookieName === "socialCredit") {
+                if (!cookieValue) {
+                    cookieValue = "30";
+                } else {
+                    cookieValue = (parseInt(cookieValue) + 15).toString();
+                }
+            }
+
+            document.cookie = cookieName + "=" + cookieValue;
+        }
+
+        window.onload = function () {
+            const display = document.querySelector('.pTimer');
+            const timerDuration = 15; // 0.25 minute in seconds
+            startTimer(timerDuration, display);
+        };
+    </script>
                                 </div>
                             </div>
                         </div>
