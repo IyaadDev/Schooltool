@@ -37,7 +37,7 @@
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item"><a class="nav-link white" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="100" data-aos-once="true" href="#">Features</a></li>
                     <li class="nav-item"><a class="nav-link white" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="200" data-aos-once="true" href="#">About</a></li>
-                </ul><button class="btn btn-primary" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="300" data-aos-once="true" type="button" style="margin: 0.5rem;">Get Access 💪</button><button class="btn btn-primary" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="400" data-aos-once="true" type="button" style="margin-left: 0.5rem;background: transparent;border-style: solid;border-color: rgb(13,110,253);color: rgb(13,110,253);">Already have access? 😎</button>
+                </ul><a class="btn btn-primary" role="button" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="300" data-aos-once="true" style="margin: 0.5rem;" href="waitlist.html">Get Access 💪</a><a class="btn btn-primary" role="button" data-bss-disabled-mobile="true" data-aos="fade" data-aos-delay="400" data-aos-once="true" style="margin-left: 0.5rem;background: transparent;border-style: solid;border-color: rgb(13,110,253);color: rgb(13,110,253);" href="waitlist.html">Already have access? 😎</a>
             </div>
         </div>
     </nav><!-- End: Navbar With Button -->
@@ -46,22 +46,11 @@
         <div class="row" style="margin-right: 0px;margin-left: -1.5rem;">
             <div class="col-md-11" data-aos="fade" data-aos-delay="500" data-aos-once="true" style="margin-right: 1rem;margin-left: 1rem;">
                 <h1 class="display-2" style="color: rgb(255,255,255);margin-left: 0.7rem;padding: 0.25rem;"><span class="gtext-lightning">Supercharge</span>&nbsp;Your Academic <span class="gtext-green">Success</span></h1>
-                <h4 class="display-1" style="color: rgb(255,255,255);margin-top: 1rem;font-size: 1.5rem;margin-left: 0.7rem;padding: 0.5rem;padding-top: 0px;">Be ahead of the rest with School Tool 🏆</h4>    <form class="text-start d-lg-flex justify-content-lg-start my-2" style="margin-left: 0.7rem;padding: 0.5rem;">
-        <div class="my-2"><input id="email" class="form-control form-control" type="email" name="email" placeholder="Your Email" style="padding: 0.5rem;" /></div>
-        <div class="my-2" style="width: 9rem;"><button id="getAccessBtn" class="btn btn-primary ms-sm-2" type="button" style="padding: 0.5rem;">Get Access 💪</button></div>
-    </form>
-
-    <script>
-        // Add an event listener to the button click
-        document.getElementById('getAccessBtn').addEventListener('click', function () {
-            // Get the user's email input
-            var userEmail = document.getElementById('email').value;
-
-            // Construct the URL with the user's email and redirect
-            var redirectURL = 'https://schooltool.io/getClass.html?email=' + encodeURIComponent(userEmail);
-            window.location.href = redirectURL;
-        });
-    </script><script>
+                <h4 class="display-1" style="color: rgb(255,255,255);margin-top: 1rem;font-size: 1.5rem;margin-left: 0.7rem;padding: 0.5rem;padding-top: 0px;">Be ahead of the rest with School Tool 🏆</h4>
+                <form class="text-start d-lg-flex justify-content-lg-start my-2" style="margin-left:0.7rem;padding:0.5rem;">
+                    <div class="my-2"><input class="form-control form-control form-control" type="email" id="email" name="email" placeholder="Email..." style="padding: 0.5rem;min-width: 19rem;background: rgb(198,198,198);" disabled="" readonly=""></div>
+                    <div class="my-2"><button class="btn btn-secondary disabled ms-sm-2" id="getAccessBtn" type="button" style="padding:0.5rem;" disabled="">Waitlist opens 14/10/2023</button></div>
+                </form><script>
     // Get the button and input element
     const getAccessBtn = document.getElementById("getAccessBtn");
     const emailInput = document.getElementById("email");
@@ -106,7 +95,7 @@
                     <h2 class="fw-bold mb-2">GPT-4 Access Rolling out!</h2>
                     <p class="mb-0">Introducing access <strong>World's Most Powerful AI</strong></p>
                 </div>
-                <div class="my-2"><button class="btn btn-primary" type="button" style="margin: 0.5rem;font-size: 1rem!important;">Get Access 💪</button><button class="btn btn-primary" type="button" style="background: transparent;border-style: solid;border-color: rgb(13,110,253);color: rgb(13,110,253);margin-left: 0.5rem;font-size: 1rem!important;">Already have access? 😎</button></div>
+                <div class="my-2"><a class="btn btn-primary" role="button" style="margin: 0.5rem;font-size: 1rem!important;" href="waitlist.html">Get Access 💪</a><a class="btn btn-primary" role="button" style="background: transparent;border-style: solid;border-color: rgb(13,110,253);color: rgb(13,110,253);margin-left: 0.5rem;font-size: 1rem!important;" href="waitlist.html">Already have access? 😎</a></div>
             </div>
         </div>
     </section><!-- End: Banner Light -->
