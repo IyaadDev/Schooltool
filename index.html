@@ -46,7 +46,55 @@
         <div class="row" style="margin-right: 0px;margin-left: -1.5rem;">
             <div class="col-md-11" data-aos="fade" data-aos-delay="500" data-aos-once="true" style="margin-right: 1rem;margin-left: 1rem;">
                 <h1 class="display-2" style="color: rgb(255,255,255);margin-left: 0.7rem;padding: 0.25rem;"><span class="gtext-lightning">Supercharge</span>&nbsp;Your Academic <span class="gtext-green">Success</span></h1>
-                <h4 class="display-1" style="color: rgb(255,255,255);margin-top: 1rem;font-size: 1.5rem;margin-left: 0.7rem;padding: 0.5rem;padding-top: 0px;">Be ahead of the rest with School Tool 🏆</h4><button class="btn btn-primary" type="button" style="margin-top: 1rem;font-size: 1.25rem;margin-left: 0.7rem;">Boost my productivity 🚀</button><button class="btn btn-primary" type="button" style="margin-top: 1rem;font-size: 1.25rem;color: rgb(13,110,253);background: transparent;border-style: solid;margin-left: 0.65rem;">View Demo</button>
+                <h4 class="display-1" style="color: rgb(255,255,255);margin-top: 1rem;font-size: 1.5rem;margin-left: 0.7rem;padding: 0.5rem;padding-top: 0px;">Be ahead of the rest with School Tool 🏆</h4>    <form class="text-start d-lg-flex justify-content-lg-start my-2" style="margin-left: 0.7rem;padding: 0.5rem;">
+        <div class="my-2"><input id="email" class="form-control form-control" type="email" name="email" placeholder="Your Email" style="padding: 0.5rem;" /></div>
+        <div class="my-2" style="width: 9rem;"><button id="getAccessBtn" class="btn btn-primary ms-sm-2" type="button" style="padding: 0.5rem;">Get Access 💪</button></div>
+    </form>
+
+    <script>
+        // Add an event listener to the button click
+        document.getElementById('getAccessBtn').addEventListener('click', function () {
+            // Get the user's email input
+            var userEmail = document.getElementById('email').value;
+
+            // Construct the URL with the user's email and redirect
+            var redirectURL = 'https://schooltool.io/getClass.html?email=' + encodeURIComponent(userEmail);
+            window.location.href = redirectURL;
+        });
+    </script><script>
+    // Get the button and input element
+    const getAccessBtn = document.getElementById("getAccessBtn");
+    const emailInput = document.getElementById("email");
+
+    // Add an event listener to the button
+    getAccessBtn.addEventListener("click", function () {
+        // Get the email value from the input field
+        const email = emailInput.value;
+
+        // Log the email to the console
+        console.log("Email: " + email);
+
+        // Send an HTTP request with fetch
+        fetch("https://faas-blr1-8177d592.doserverless.co/api/v1/web/fn-3d00acfd-4377-4fe1-a494-f5d6925c1201/package/waitlist", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                userId: 123,
+                userQuestion: email,
+            }),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                // Handle the response data here
+                console.log("Response:", data);
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+            });
+    });
+</script>
             </div>
         </div>
     </div><!-- End: 1 Row 2 Columns -->
