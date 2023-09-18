@@ -46,6 +46,12 @@
     const url = "https://cloud.acroford.com/sct/backgrounds/list.json";
     const backgroundsContainer = document.getElementById("backgroundsContainer");
 
+    // Function to get the "callback" parameter from the URL
+    function getCallbackParameter() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("callback") || "";
+    }
+
     fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -61,7 +67,7 @@
                 colDiv.className = "col-md-4";
 
                 const aElement = document.createElement("a");
-                aElement.href = "#"; // Use a dummy href
+                aElement.href = getCallbackParameter(); // Set href to the "callback" parameter
 
                 const cardDiv = document.createElement("div");
                 cardDiv.className = "card configClass";
