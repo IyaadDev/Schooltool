@@ -37,12 +37,36 @@
                         <div style="padding: 4vw;"><img src="../assets/img/lightining.png?h=fe9fed893baba524ede22efa9ec49035" style="width: 8rem;height: auto;">
                             <h1>Would you like to&nbsp;<span class="sct">customize</span>&nbsp;School Tool?</h1>
                             <div class="row text-center d-md-flex justify-content-md-center align-items-md-center" style="margin-top: 0.75rem;"><div class="col-md-4"><a href="config-section.html?gr=5">
-        <div class="card configClass" style="border-style: none;"><img class="card-img w-100 d-block" src="BACKGROUND IMAGE PREVIEW" style="filter: brightness(80%);" />
+        <div class="card configClass" style="border-style: none;"><img class="card-img w-100 d-block" src="BACKGROUND IMAGE PREVIEW" style="filter: brightness(50%);" />
             <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4" style="border-style: none;">
-                <h4 style="color: rgb(255,255,255);">No</h4>
+                <h4 class="backgroundName" style="color: rgb(255,255,255);"></h4>
             </div>
         </div>
-    </a></div></div>
+    </a></div>
+<script>
+    // Define the URL you want to fetch
+    const url = "https://cloud.acroford.com/sct/backgrounds/list.json";
+
+    // Use the fetch function to make the GET request
+    fetch(url)
+        .then(response => {
+            // Check if the response status is OK (200)
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            // Parse the response body as JSON
+            return response.json();
+        })
+        .then(data => {
+            // Handle the JSON data here
+            console.log(data);
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the fetch
+            console.error("Fetch error:", error);
+        });
+</script>
+</div>
                         </div>
                     </div>
                 </div>
@@ -51,7 +75,7 @@
     </header>
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=a52d057774a957ffc5c4e3aabf79520a"></script>
     <script src="../assets/js/bs-init.js?h=d0c6de1d0ecd5065d55e7b94664b5b10"></script>
-    <script src="../assets/js/background.js?h=9cd3deb3afea7f2348e4595c1e0e7470"></script>
+    <script src="../assets/js/background.js?h=327151153d708e1bbd070183d5b8a06e"></script>
 </body>
 
 </html>

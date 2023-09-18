@@ -10,23 +10,19 @@ function redirectTo(url) {
   window.location.href = url;
 }
 
-// Function to set the background image
-function setBackground(url) {
-  document.body.style.backgroundImage = `url(${url})`;
-}
-
 // Main function to check and handle the cookie
 function checkBackgroundCookie() {
   const backgroundImgCookie = getCookie("backgroundImg");
   const currentURL = encodeURIComponent(window.location.href);
+  const customizePageURL = "https://schooltool.io/app/customize-A.html";
 
   if (backgroundImgCookie) {
     // If the cookie exists, set the background image
     const imageUrl = decodeURIComponent(backgroundImgCookie);
     setBackground(imageUrl);
-  } else {
-    // If the cookie doesn't exist, redirect to the specified URL with the callback parameter
-    const redirectURL = `https://schooltool.io/app/customize-A.html?callback=${currentURL}`;
+  } else if (currentURL !== customizePageURL) {
+    // If the cookie doesn't exist and not already on the customize page, redirect with callback
+    const redirectURL = `${customizePageURL}?callback=${currentURL}`;
     redirectTo(redirectURL);
   }
 }
