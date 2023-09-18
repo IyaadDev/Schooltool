@@ -16,12 +16,12 @@ function getCookie(cookieName) {
 const backgroundCookie = getCookie("backgroundImg");
 
 if (backgroundCookie) {
-  // Log the contents of the "backgroundImg" cookie to the console
-  console.log("Contents of 'backgroundImg' cookie:", backgroundCookie);
-
-  // Set the background image for the body of the webpage using CSS
-  document.body.style.backgroundImage = `url('${backgroundCookie}') !important`;
-  document.body.style.backgroundSize = "cover"; // Optional: Set background size
+  console.log("Found 'backgroundImg' cookie with value:", backgroundCookie);
+  
+  // Set the image from the "backgroundImg" cookie as the background of the webpage
+  document.body.style.backgroundImage = `url(${backgroundCookie})`;
+  
+  console.log("Background image set successfully!");
 } else {
   console.log("'backgroundImg' cookie does not exist.");
 }
