@@ -21,9 +21,7 @@ function checkBackgroundCookie() {
     const imageUrl = decodeURIComponent(backgroundImgCookie);
     setBackground(imageUrl);
   } else if (currentURL !== customizePageURL) {
-    // If the cookie doesn't exist and not already on the customize page, redirect with callback
-    const redirectURL = `${customizePageURL}?callback=${currentURL}`;
-    redirectTo(redirectURL);
+      console.log("Uncustomized Background")
   }
 }
 
