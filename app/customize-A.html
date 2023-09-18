@@ -36,37 +36,72 @@
                     <div class="card-body text-center d-md-flex justify-content-md-center align-items-md-center" style="border-radius: 5rem;background: #ffffff00;">
                         <div style="padding: 4vw;"><img src="../assets/img/lightining.png?h=fe9fed893baba524ede22efa9ec49035" style="width: 8rem;height: auto;">
                             <h1>Would you like to&nbsp;<span class="sct">customize</span>&nbsp;School Tool?</h1>
-                            <div class="row text-center d-md-flex justify-content-md-center align-items-md-center" style="margin-top: 0.75rem;"><div class="col-md-4"><a href="config-section.html?gr=5">
-        <div class="card configClass" style="border-style: none;"><img class="card-img w-100 d-block" src="BACKGROUND IMAGE PREVIEW" style="filter: brightness(50%);" />
-            <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4" style="border-style: none;">
-                <h4 class="backgroundName" style="color: rgb(255,255,255);"></h4>
-            </div>
-        </div>
-    </a></div>
-<script>
-    // Define the URL you want to fetch
-    const url = "https://cloud.acroford.com/sct/backgrounds/list.json";
+                            <div class="row text-center d-md-flex justify-content-md-center align-items-md-center" style="margin-top: 0.75rem;"><div class="container">
+    <div class="row" id="backgroundsContainer">
+        <!-- Background items will be added here -->
+    </div>
+</div>
 
-    // Use the fetch function to make the GET request
+<script>
+    const url = "https://cloud.acroford.com/sct/backgrounds/list.json";
+    const backgroundsContainer = document.getElementById("backgroundsContainer");
+
     fetch(url)
         .then(response => {
-            // Check if the response status is OK (200)
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            // Parse the response body as JSON
             return response.json();
         })
         .then(data => {
-            // Handle the JSON data here
-            console.log(data);
+            const backgrounds = data.backgrounds;
+            backgrounds.forEach(background => {
+                // Create the elements for each background
+                const colDiv = document.createElement("div");
+                colDiv.className = "col-md-4";
+
+                const aElement = document.createElement("a");
+                aElement.href = "#"; // Use a dummy href
+
+                const cardDiv = document.createElement("div");
+                cardDiv.className = "card configClass";
+                cardDiv.style.borderStyle = "none";
+
+                const imgElement = document.createElement("img");
+                imgElement.className = "card-img w-100 d-block";
+                imgElement.src = background.src;
+                imgElement.style.filter = "brightness(50%)";
+
+                const cardOverlayDiv = document.createElement("div");
+                cardOverlayDiv.className = "card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4";
+                cardOverlayDiv.style.borderStyle = "none";
+
+                const h4Element = document.createElement("h4");
+                h4Element.className = "backgroundName";
+                h4Element.style.color = "rgb(255,255,255)";
+                h4Element.textContent = background.name;
+
+                // Add a click event listener to set the cookie
+                aElement.addEventListener("click", () => {
+                    // Set the background "src" as a cookie with name "backgroundImg"
+                    document.cookie = `backgroundImg=${background.src}`;
+                    // You can also optionally update the background immediately
+                    // document.body.style.backgroundImage = `url('${background.src}')`;
+                });
+
+                // Append elements to the container
+                cardOverlayDiv.appendChild(h4Element);
+                cardDiv.appendChild(imgElement);
+                cardDiv.appendChild(cardOverlayDiv);
+                aElement.appendChild(cardDiv);
+                colDiv.appendChild(aElement);
+                backgroundsContainer.appendChild(colDiv);
+            });
         })
         .catch(error => {
-            // Handle any errors that occurred during the fetch
             console.error("Fetch error:", error);
         });
-</script>
-</div>
+</script></div>
                         </div>
                     </div>
                 </div>
@@ -75,7 +110,7 @@
     </header>
     <script src="../assets/bootstrap/js/bootstrap.min.js?h=a52d057774a957ffc5c4e3aabf79520a"></script>
     <script src="../assets/js/bs-init.js?h=d0c6de1d0ecd5065d55e7b94664b5b10"></script>
-    <script src="../assets/js/background.js?h=55f54601ce0c03e2d3a52dbc60272fe9"></script>
+    <script src="../assets/js/background.js?h=73d13e1e5e2da4cfcfc29896588b0eb8"></script>
 </body>
 
 </html>
