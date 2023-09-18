@@ -1,0 +1,59 @@
+.sct {
+  background: linear-gradient(128deg, #4939ff 0%, #5015b1 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gtext-green {
+  background: linear-gradient(45deg, #6effb0, #1a8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gtext-vibrantSun {
+  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gtext-redBlue {
+  -webkit-background-clip: text!important;
+  -webkit-text-fill-color: transparent!important;
+  background: linear-gradient(-132deg, #FF0000, #0000FF)!important;
+}
+
+.gtext-lightning {
+  -webkit-background-clip: text!important;
+  -webkit-text-fill-color: transparent!important;
+  background: linear-gradient(130deg, #ff5c00 0%, #ffb800 100%);
+}
+
+.gtext-blue {
+  background: linear-gradient(90deg, #64b0c8 0%, #2192b5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forceend {
+  max-height: 23rem!important;
+}
+
+#random-image {
+  border-radius: 2.5rem!important;
+  border: none;
+}
+
+.rounder {
+  border-radius: 1rem!important;
+}
+
+#classTimetable {
+  width: 100%!important;
+  height: auto;
+  border-radius: 15px!important;
+}
+
+.dontHaveAcc {
+  margin-left: 15px!important;
+}
+
