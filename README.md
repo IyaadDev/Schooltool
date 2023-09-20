@@ -1,5 +1,5 @@
 # School Tool
-School Tool is an application designed for students in class. They can access their timetable, School Resources and more (Custom features per class)
+Welcome to the School Tool GitHub Repository, here are source files for the website, unfortunately, School Tool is not open for editing, simply for viewing and analytics.
 
 ## Handy features
 - Designed in Dark Mode.
