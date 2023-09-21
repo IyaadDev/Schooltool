@@ -16,7 +16,7 @@
   width: 100%;
   height: 100%;
   background-color: #073042;
-  border-radius: 10rem;
+  border-radius: 8px;
   z-index: -2;
 }
 .aib:before {
@@ -28,7 +28,7 @@
   height: 100%;
   background-color: #6dd58c;
   transition: all 0.3s;
-  border-radius: 10rem;
+  border-radius: 8px;
   z-index: -1;
 }
 .aib:hover {
