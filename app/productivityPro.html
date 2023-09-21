@@ -35,7 +35,7 @@
                 <!-- Start: 1 Row 3 Columns -->
                 <div class="container">
                     <div class="row text-center d-sm-flex justify-content-sm-center">
-                        <div class="col-md-4 col-lg-4">
+                        <div class="col-md-4 col-lg-4" style="height: 100%;">
                             <div class="card" style="background: rgba(255,255,255,0.6);margin: 1rem!Important;">
                                 <div class="card-body text-center" style="border-radius: 5rem;background: #ffffff00;">
                                     <h4>&nbsp;Time left</h4> <h1 class="pTimer" style="font-size: 3rem!important;">45:00</h1>
@@ -132,9 +132,9 @@ function startTimer(duration, display) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-10 col-md-7 col-lg-7 text-center">
+                        <div class="col-sm-10 col-md-7 col-lg-7 text-center" style="height: 100%;">
                             <!-- Start: Tabs Unlocked -->
-                            <div style="background: rgba(255,255,255,0.6);border-radius: 8px;">
+                            <div style="background: rgba(255,255,255,0.6);border-radius: 8px;margin: 1rem;">
                                 <!-- Start: Tab Nav -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item" role="presentation"><a class="nav-link active" href="#tab-1" role="tab" data-bs-toggle="tab">GPT-4</a></li>
@@ -142,9 +142,25 @@ function startTimer(duration, display) {
                                 </ul><!-- End: Tab Nav -->
                                 <!-- Start: Tab content -->
                                 <div class="tab-content">
-                                    <div id="tab-1" class="tab-pane active" role="tabpanel">
-                                        <div class="text-center d-flex justify-content-center align-items-center"><input type="text" id="name-2" name="name" placeholder="Ask a question..." style="margin: 1rem;padding: 0.35rem;border-radius: 5px;border-style: solid;border-color: rgba(255,255,255,0.83);width: 90%;"></div>
-                                    </div>
+                                    <div id="tab-1" class="tab-pane active" role="tabpanel"><div class="text-center">
+  <input id="name-2" type="text" name="question" placeholder="Ask a question..." style="margin: 1rem;padding: 0.35rem;border-radius: 5px;border-style: solid;border-color: rgba(255,255,255,0.83);width: 70%;" />
+  <button class="btn btn-primary" type="button" id="askButton" style="margin: 0.15rem;">Ask</button>
+</div>
+
+<script>
+  // Get the "Ask" button element by its id
+  const askButton = document.getElementById("askButton");
+
+  // Add a click event listener to the "Ask" button
+  askButton.addEventListener("click", function() {
+    // Get the input element by its id
+    const questionInput = document.getElementById("name-2");
+
+    // Get the value of the input and log it to the console
+    const questionText = questionInput.value;
+    console.log("User's question:", questionText);
+  });
+</script></div>
                                     <div id="tab-2" class="tab-pane" role="tabpanel">
                                         <p>Content for tab 2.<br></p>
                                     </div>
